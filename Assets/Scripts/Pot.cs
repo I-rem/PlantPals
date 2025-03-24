@@ -6,6 +6,8 @@ public class Pot : MonoBehaviour, IInteractable
     private bool isWatered = false;
     public GameObject plantedSeed;
     
+    public GameObject digPlace;
+
     public void Interact()
     {
         Debug.Log("Interact called");

@@ -43,9 +43,12 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdateSprite()
     {
+        //Debug.Log((Vector3)moveDirection * moveSpeed * Time.deltaTime);
+        
         if (moveDirection.y > 0)
         {
-            Debug.Log(moveDirection.magnitude);
+             animator.enabled = true;
+           // Debug.Log((Vector3)moveDirection * moveSpeed * Time.deltaTime);
             if (moveDirection.magnitude <= 0)
             {
                 animator.StopPlayback();
@@ -56,6 +59,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (moveDirection.y < 0)
         {
+            animator.enabled = true;
             if (moveDirection.magnitude <= 0)
             {
                 animator.StopPlayback();
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (moveDirection.x > 0)
         {
+            animator.enabled = true;
             if (moveDirection.magnitude <= 0)
             {
                 animator.StopPlayback();
@@ -76,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (moveDirection.x < 0)
         {
+            animator.enabled = true;
             if (moveDirection.magnitude <= 0)
             {
                 animator.StopPlayback();
@@ -84,6 +90,8 @@ public class PlayerMovement : MonoBehaviour
             else
                 animator.Play(walkLeftAnimation.name);
         }
+        else
+            animator.enabled = false;
 
     }
 }

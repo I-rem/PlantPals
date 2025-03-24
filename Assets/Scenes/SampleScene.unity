@@ -648,6 +648,7 @@ Transform:
   - {fileID: 2072676423}
   - {fileID: 1925221036}
   - {fileID: 984909424}
+  - {fileID: 1723456752}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &689696706
@@ -4895,12 +4896,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723456749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -9.31, y: -0.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -9.585485, y: -0.015767872, z: -0.008571143}
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 611570763}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &1776455430
 PrefabInstance:
@@ -5533,26 +5534,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1579668439882973595, guid: ab58f3a0b7d4d2b47aedad8b5d0125ee, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579668439882973595, guid: ab58f3a0b7d4d2b47aedad8b5d0125ee, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1579668439882973595, guid: ab58f3a0b7d4d2b47aedad8b5d0125ee, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340305409670366861, guid: ab58f3a0b7d4d2b47aedad8b5d0125ee, type: 3}
-      propertyPath: m_Size.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2340305409670366861, guid: ab58f3a0b7d4d2b47aedad8b5d0125ee, type: 3}
-      propertyPath: m_Size.y
-      value: 0.2
-      objectReference: {fileID: 0}
     - target: {fileID: 3543674161861940090, guid: ab58f3a0b7d4d2b47aedad8b5d0125ee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.49
@@ -5813,5 +5794,4 @@ SceneRoots:
   - {fileID: 2057430496}
   - {fileID: 846964405}
   - {fileID: 849418352}
-  - {fileID: 1723456752}
   - {fileID: 611570763}
