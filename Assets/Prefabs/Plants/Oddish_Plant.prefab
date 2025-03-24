@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evolutionStages:
+  - name: Dirt
+    sprite: {fileID: 269947258, guid: 392676c200195394cb618903f31f5261, type: 3}
   - name: Oddish
     sprite: {fileID: 21300000, guid: f9d65fa69a4707849ac12b7c202153da, type: 3}
   - name: Gloom
