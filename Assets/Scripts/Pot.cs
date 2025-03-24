@@ -5,37 +5,45 @@ public class Pot : MonoBehaviour, IInteractable
     private bool hasSeed = false;
     private bool isWatered = false;
     public GameObject plantedSeed;
-    public GameObject plantPrefab; // Assign plant prefab in Inspector
-
+    
     public void Interact()
     {
         if (!hasSeed && Inventory.instance.currentItem != null)
         {
-            if (Inventory.instance.currentItem.CompareTag("Interactable")) // Seeds are tagged as Interactable
+            Seed seed = Inventory.instance.currentItem.GetComponent<Seed>();
+            if (seed != null)
             {
-                PlantSeed(Inventory.instance.currentItem);
+                PlantSeed(seed);
             }
         }
         else if (hasSeed && !isWatered && Inventory.instance.currentItem != null)
         {
-            if (Inventory.instance.currentItem.CompareTag("Interactable")) // Watering can is also Interactable
+            if (Inventory.instance.currentItem.CompareTag("WateringCan"))
             {
                 WaterPlant();
             }
         }
     }
 
-    public void PlantSeed(GameObject seed)
+    public void PlantSeed(Seed seed)
     {
         hasSeed = true;
-        plantedSeed = Instantiate(plantPrefab, transform.position, Quaternion.identity);
-        Inventory.instance.DropItem(seed); // Automatically drop the seed after planting
-        Destroy(seed);
+        seed.PlantSeed(this);
+    }
+
+    public void SetPlant(GameObject plant)
+    {
+        plantedSeed = plant;
+    }
+
+    public bool IsEmpty()
+    {
+        return !hasSeed;
     }
 
     private void WaterPlant()
     {
-        if (hasSeed && plantedSeed != null)
+        if (plantedSeed != null)
         {
             isWatered = true;
             plantedSeed.GetComponent<Plant>().GrowFaster();

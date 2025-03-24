@@ -45,7 +45,7 @@ public class Inventory : MonoBehaviour
         if (currentItem != null)
         {
             //currentItem.transform.SetParent(item.transform);
-            Debug.Log(item);
+            
             currentItem.transform.SetParent(null);
             
             currentItem = null;

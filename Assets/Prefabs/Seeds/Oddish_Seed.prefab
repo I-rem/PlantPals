@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7437391953434089883}
   - component: {fileID: 8404995872159953343}
   - component: {fileID: 195287620239202690}
+  - component: {fileID: 5691055364771780562}
   m_Layer: 0
-  m_Name: Seed
+  m_Name: Oddish_Seed
   m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,3 +164,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canPickup: 0
   picked_up: 0
+--- !u!114 &5691055364771780562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482565147648969932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b059b1b7b0f5748b4fb59511b52643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plantPrefab: {fileID: 8114119809783645524, guid: 155b26c8a141c7141b8f20a70b6428e4, type: 3}

@@ -4,41 +4,36 @@ using System.Collections;
 public class Plant : MonoBehaviour
 {
     [System.Serializable]
-    public class PlantType
+    public class EvolutionStage
     {
         public string name;
-        public Sprite[] growthStages;
-        public Sprite evolvedSprite;
+        public Sprite sprite;
     }
 
-    public PlantType[] plantTypes;  // Assign different plant types in Inspector
-    private PlantType selectedPlant;
-    
-    private SpriteRenderer spriteRenderer;
-    private int growthStage = 0;
+    public EvolutionStage[] evolutionStages;
+    private int currentStage = 0;
     private bool isWatered = false;
-    private bool isEvolved = false;
+    private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Randomly select a plant type (or set it based on seed)
-        selectedPlant = plantTypes[Random.Range(0, plantTypes.Length)];
-
         // Set initial sprite
-        spriteRenderer.sprite = selectedPlant.growthStages[0];
+        if (evolutionStages.Length > 0)
+        {
+            spriteRenderer.sprite = evolutionStages[0].sprite;
+        }
 
         StartCoroutine(Grow());
     }
 
     IEnumerator Grow()
     {
-        while (growthStage < selectedPlant.growthStages.Length - 1)
+        while (currentStage < evolutionStages.Length - 1)
         {
             yield return new WaitForSeconds(isWatered ? 3f : 6f);
-            growthStage++;
-            spriteRenderer.sprite = selectedPlant.growthStages[growthStage];
+            Evolve();
         }
     }
 
@@ -49,10 +44,10 @@ public class Plant : MonoBehaviour
 
     public void Evolve()
     {
-        if (!isEvolved)
+        if (currentStage < evolutionStages.Length - 1)
         {
-            isEvolved = true;
-            spriteRenderer.sprite = selectedPlant.evolvedSprite;
+            currentStage++;
+            spriteRenderer.sprite = evolutionStages[currentStage].sprite;
         }
     }
 }
