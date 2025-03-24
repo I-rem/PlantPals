@@ -15,7 +15,6 @@ public class PickupItem : MonoBehaviour
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E)) 
         {
-            Debug.Log("Taget: " + gameObject);
             inventory.AddItem(gameObject, inventory.GetComponent<Inventory>().currentItem);
            // Destroy(gameObject);  
         }

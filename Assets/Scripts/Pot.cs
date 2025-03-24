@@ -8,6 +8,7 @@ public class Pot : MonoBehaviour, IInteractable
     
     public void Interact()
     {
+        Debug.Log("Interact called");
         if (!hasSeed && Inventory.instance.currentItem != null)
         {
             Seed seed = Inventory.instance.currentItem.GetComponent<Seed>();

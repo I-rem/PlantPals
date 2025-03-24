@@ -6,12 +6,13 @@ public class Seed : MonoBehaviour
 
     public void PlantSeed(Pot pot)
     {
-        if (pot.IsEmpty())
-        {
+        Debug.Log("Plant seed called");
+       // if (pot.IsEmpty())
+       // {
             GameObject plant = Instantiate(plantPrefab, pot.transform.position, Quaternion.identity);
             pot.SetPlant(plant);
             Inventory.instance.DropItem(gameObject);
             Destroy(gameObject); // Remove seed after planting
-        }
+      //  }
     }
 }

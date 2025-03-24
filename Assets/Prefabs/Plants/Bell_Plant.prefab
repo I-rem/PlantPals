@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0.052865736, g: 0.509434, b: 0.104586355, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   evolutionStages:
-  - name: 
+  - name: Bellsprout
     sprite: {fileID: 21300000, guid: 856d74691026c8945b22ff8bec84a6b5, type: 3}
-  - name: 
+  - name: Victreebell
     sprite: {fileID: 21300000, guid: 0439bf2f6d3865748ac0b1f68668c946, type: 3}
-  - name: 
+  - name: Weepinbell
     sprite: {fileID: 21300000, guid: c20e4ebe08b96ed48900fd2755366f84, type: 3}

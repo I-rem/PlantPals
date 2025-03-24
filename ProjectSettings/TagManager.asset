@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactable
   - Pot
+  - WateringCan
   layers:
   - Default
   - TransparentFX
