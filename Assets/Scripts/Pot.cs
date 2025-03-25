@@ -7,7 +7,8 @@ public class Pot : MonoBehaviour, IInteractable
     public GameObject plantedSeed;
     
     public GameObject digPlace;
-
+    
+    public GameObject AudioManager;
     public void Interact()
     {
         Debug.Log("Interact called");
@@ -50,6 +51,8 @@ public class Pot : MonoBehaviour, IInteractable
         {
             isWatered = true;
             plantedSeed.GetComponent<Plant>().GrowFaster();
+            AudioManager.GetComponent<AudioManager>().OneShot("GlugGlug");
+            
         }
     }
 }

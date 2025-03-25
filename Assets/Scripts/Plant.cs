@@ -32,7 +32,7 @@ public class Plant : MonoBehaviour
     {
         while (currentStage < evolutionStages.Length - 1)
         {
-            yield return new WaitForSeconds(isWatered ? 3f : 6f);
+            yield return new WaitForSeconds(isWatered ? 3f : 12f);
             Evolve();
         }
     }

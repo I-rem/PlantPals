@@ -16,6 +16,7 @@ public class PickupItem : MonoBehaviour
         if (canPickup && Input.GetKeyDown(KeyCode.E)) 
         {
             inventory.AddItem(gameObject, inventory.GetComponent<Inventory>().currentItem);
+           // gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5; 
            // Destroy(gameObject);  
         }
     }

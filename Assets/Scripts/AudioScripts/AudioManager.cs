@@ -10,6 +10,9 @@ public class AudioManager : MonoBehaviour
 	public AudioMixerGroup mixerGroup;
 
 	public Sound[] sounds;
+	public bool limited = false;
+
+	public float stop;
 
 	void Awake()
 	{
@@ -31,23 +34,23 @@ public class AudioManager : MonoBehaviour
 
 			s.source.outputAudioMixerGroup = mixerGroup;
 		}
-		Sound s2 = Array.Find(sounds, item => item.name == "Ambience");
-		Sound s3 = Array.Find(sounds, item => item.name == "Final");
+		Sound s2 = Array.Find(sounds, item => item.name == "Pewter");
+	
 		
 		if (s2 != null)
-			Play("Ambience");
-		else if (s3 != null)
-		{
-			Play("Final");
-		}
+			Play("Pewter");
+		//else if (s3 != null)
+		//{
+			//Play("Final");
+		//}
 		else
 		{
-			s2 = Array.Find(sounds, item => item.name == "Opening");
-			s3 = Array.Find(sounds, item => item.name == "Campfire");
-			if (s3 != null)
-				Play("Campfire");
-			if (s2 != null)
-				OneShot("Opening");
+			//s2 = Array.Find(sounds, item => item.name == "Opening");
+			//s3 = Array.Find(sounds, item => item.name == "Campfire");
+			//if (s3 != null)
+			//	Play("Campfire");
+			//if (s2 != null)
+				//OneShot("Opening");
 		}
 
 	}
@@ -63,7 +66,7 @@ public class AudioManager : MonoBehaviour
 
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
-
+		
 		s.source.Play();
 	}
 
@@ -81,6 +84,7 @@ public class AudioManager : MonoBehaviour
 
 		s.source.PlayOneShot(s.clip);
 	}
-	
 
+	
+	
 }
