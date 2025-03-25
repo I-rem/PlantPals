@@ -27,4 +27,10 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red; // Set the color of the circle
+        Gizmos.DrawWireSphere(transform.position, interactRange); // Draw the circle
+    }
+
 }

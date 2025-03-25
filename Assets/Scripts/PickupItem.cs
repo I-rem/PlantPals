@@ -31,10 +31,11 @@ public class PickupItem : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && picked_up)
+        if (other.CompareTag("Player"))
         {
             canPickup = false;
-            player = null;
-        }
+            if (picked_up)
+                player = null;
+         }
     }
 }
