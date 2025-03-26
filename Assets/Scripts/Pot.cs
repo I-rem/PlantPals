@@ -49,7 +49,7 @@ public class Pot : MonoBehaviour, IInteractable
     {
         if (plantedSeed != null)
         {
-            isWatered = true;
+            //isWatered = true;
             plantedSeed.GetComponent<Plant>().GrowFaster();
             AudioManager.GetComponent<AudioManager>().OneShot("GlugGlug");
             

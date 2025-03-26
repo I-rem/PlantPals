@@ -39,7 +39,9 @@ public class Plant : MonoBehaviour
 
     public void GrowFaster()
     {
-        isWatered = true;
+        //isWatered = true;
+        if (currentStage < evolutionStages.Length - 1)
+             Evolve();
     }
 
     public void Evolve()
