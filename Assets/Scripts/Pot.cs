@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Pot : MonoBehaviour, IInteractable
 {
@@ -51,8 +52,38 @@ public class Pot : MonoBehaviour, IInteractable
         {
             //isWatered = true;
             plantedSeed.GetComponent<Plant>().GrowFaster();
+            StartCoroutine(RotateWateringCan(Inventory.instance.currentItem.transform));
             AudioManager.GetComponent<AudioManager>().OneShot("GlugGlug");
             
         }
     }
+
+    IEnumerator RotateWateringCan(Transform wateringCan)
+{
+    float duration = 0.2f;
+    float angle = -30f;
+
+    Quaternion startRotation = wateringCan.rotation;
+    Quaternion rotated = Quaternion.Euler(0, 0, angle);
+    Quaternion endRotation = startRotation * rotated;
+
+    float t = 0;
+    while (t < 1f)
+    {
+        t += Time.deltaTime / duration;
+        wateringCan.rotation = Quaternion.Slerp(startRotation, endRotation, t);
+        yield return null;
+    }
+
+    // Return to original rotation
+    t = 0;
+    while (t < 1f)
+    {
+        t += Time.deltaTime / duration;
+        wateringCan.rotation = Quaternion.Slerp(endRotation, startRotation, t);
+        yield return null;
+    }
+}
+
+
 }
