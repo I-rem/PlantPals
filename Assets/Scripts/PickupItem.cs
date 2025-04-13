@@ -6,6 +6,8 @@ public class PickupItem : MonoBehaviour
     private GameObject player;
     private Inventory inventory;
      public bool picked_up = false;
+
+     public GameObject myText;
     void Start()
     {
         inventory = Inventory.instance;
@@ -15,6 +17,7 @@ public class PickupItem : MonoBehaviour
     {
         if (canPickup && Input.GetKeyDown(KeyCode.E)) 
         {
+            myText.SetActive(false);
             inventory.AddItem(gameObject, inventory.GetComponent<Inventory>().currentItem);
            // gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5; 
            // Destroy(gameObject);  
@@ -27,6 +30,7 @@ public class PickupItem : MonoBehaviour
         {
             canPickup = true;
             player = other.gameObject;
+            myText.SetActive(true);
         }
     }
 
@@ -37,6 +41,7 @@ public class PickupItem : MonoBehaviour
             canPickup = false;
             if (picked_up)
                 player = null;
+            myText.SetActive(false);
          }
     }
 }

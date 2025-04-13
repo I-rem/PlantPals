@@ -10,6 +10,8 @@ public class Pot : MonoBehaviour, IInteractable
     public GameObject digPlace;
     
     public GameObject AudioManager;
+
+    public GameObject myText;
     public void Interact()
     {
         Debug.Log("Interact called");
@@ -29,11 +31,24 @@ public class Pot : MonoBehaviour, IInteractable
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!hasSeed && Inventory.instance.currentItem != null)
+            myText.SetActive(true);
+        else if (hasSeed && !isWatered && Inventory.instance.currentItem != null)
+            myText.SetActive(true);
+    }
 
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        //if (other.CompareTag("Player"))
+            myText.SetActive(false);
+    }
     public void PlantSeed(Seed seed)
     {
         hasSeed = true;
         seed.PlantSeed(this);
+        myText.SetActive(false);
     }
 
     public void SetPlant(GameObject plant)
