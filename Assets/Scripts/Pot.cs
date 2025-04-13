@@ -12,6 +12,7 @@ public class Pot : MonoBehaviour, IInteractable
     public GameObject AudioManager;
 
     public GameObject myText;
+    
     public void Interact()
     {
         Debug.Log("Interact called");
@@ -69,7 +70,8 @@ public class Pot : MonoBehaviour, IInteractable
             plantedSeed.GetComponent<Plant>().GrowFaster();
             StartCoroutine(RotateWateringCan(Inventory.instance.currentItem.transform));
             AudioManager.GetComponent<AudioManager>().OneShot("GlugGlug");
-            
+            plantedSeed.GetComponent<Plant>().waterLevel += 0.5f;  
+            plantedSeed.GetComponent<Plant>().UpdateWaterBar();
         }
     }
 
